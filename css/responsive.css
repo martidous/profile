@@ -1,0 +1,231 @@
+/* ===================================
+   RESPONSIVE DESIGN
+   =================================== */
+
+/* Tablet and below */
+@media (max-width: 768px) {
+    :root {
+        --container-padding: var(--space-sm);
+        --space-xl: 64px;
+    }
+    
+    .section {
+        padding: var(--space-lg) 0;
+    }
+    
+    .nav-dots {
+        right: var(--space-sm);
+        gap: var(--space-sm);
+    }
+    
+    .nav-dot {
+        width: 10px;
+        height: 10px;
+    }
+    
+    .hero-title {
+        font-size: clamp(40px, 10vw, 72px);
+    }
+    
+    .hero-subtitle {
+        font-size: 14px;
+    }
+    
+    .hero-hook {
+        font-size: 18px;
+    }
+    
+    .section-title {
+        font-size: clamp(32px, 8vw, 48px);
+        margin-bottom: var(--space-md);
+    }
+    
+    .section-title-center {
+        font-size: clamp(32px, 8vw, 48px);
+        margin-bottom: var(--space-lg);
+    }
+    
+    /* Journey Section Mobile */
+    .journey-container {
+        padding: var(--space-md) 0;
+    }
+    
+    .journey-node {
+        grid-template-columns: 60px 1fr;
+        gap: var(--space-sm);
+        margin-bottom: var(--space-lg);
+    }
+    
+    .node-content.node-right {
+        grid-column: 2;
+    }
+    
+    .node-content.node-left {
+        display: none;
+    }
+    
+    .node-marker {
+        grid-column: 1;
+        grid-row: 1;
+    }
+    
+    .node-text {
+        padding: var(--space-sm);
+    }
+    
+    .node-title {
+        font-size: clamp(18px, 5vw, 22px);
+    }
+    
+    .node-text p {
+        font-size: 15px;
+    }
+    
+    #journey-path-canvas {
+        left: 30px;
+    }
+    
+    .work-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-md);
+    }
+
+    .contact-links {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .contact-link {
+        width: 100%;
+        max-width: 300px;
+        text-align: center;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    :root {
+        --space-lg: 48px;
+    }
+    
+    .hero-title {
+        font-size: 36px;
+    }
+    
+    .hero-subtitle {
+        font-size: 12px;
+    }
+    
+    .scroll-indicator {
+        margin-top: var(--space-lg);
+    }
+    
+    .section-title {
+        font-size: 28px;
+    }
+    
+    .story-subtitle {
+        font-size: 20px;
+    }
+    
+    .story-text {
+        font-size: 15px;
+    }
+    
+    .project-info {
+        padding: var(--space-sm);
+    }
+    
+    .project-title {
+        font-size: 18px;
+    }
+    
+    .project-description {
+        font-size: 13px;
+    }
+    
+    .contact-statement {
+        font-size: 16px;
+    }
+}
+
+/* Landscape mobile */
+@media (max-width: 768px) and (orientation: landscape) {
+    .section {
+        min-height: auto;
+        padding: var(--space-lg) 0;
+    }
+    
+    .hero-section {
+        padding: var(--space-xl) 0;
+    }
+    
+    .scroll-indicator {
+        display: none;
+    }
+}
+
+/* High resolution displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    body {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+}
+
+/* ===================================
+   MODAL RESPONSIVE STYLES
+   =================================== */
+
+@media (max-width: 768px) {
+    .modal-content {
+        width: 100vw;
+        height: 100vh;
+        max-width: none;
+        border-radius: 0;
+    }
+
+    .modal-header {
+        padding: var(--space-sm);
+    }
+
+    .modal-title {
+        font-size: 20px;
+        padding-right: 50px;
+    }
+
+    .modal-close {
+        width: 40px;
+        height: 40px;
+        font-size: 28px;
+    }
+
+    .loading-spinner {
+        width: 40px;
+        height: 40px;
+    }
+
+    .modal-loading span {
+        font-size: 12px;
+    }
+
+    .embed-error-icon {
+        font-size: 48px;
+    }
+
+    .embed-error-message {
+        font-size: 14px;
+    }
+
+    .embed-retry-btn,
+    .embed-open-btn {
+        font-size: 12px;
+        padding: 10px 20px;
+    }
+
+    .project-badge {
+        opacity: 1;
+        font-size: 10px;
+        padding: 4px 8px;
+    }
+}

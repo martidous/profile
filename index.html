@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Martuza Ferdous| Creative Technologist</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    
+    <!-- p5.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
+</head>
+<body>
+    
+    <!-- p5.js Canvas Container -->
+    <div id="canvas-container"></div>
+    
+    <!-- Side Navigation Dots -->
+    <nav class="nav-dots">
+        <button class="nav-dot active" data-section="hero" aria-label="Hero Section"></button>
+        <button class="nav-dot" data-section="story" aria-label="Story Section"></button>
+        <button class="nav-dot" data-section="work" aria-label="Work Section"></button>
+        <button class="nav-dot" data-section="contact" aria-label="Contact Section"></button>
+    </nav>
+    
+    <!-- Main Content -->
+    <main>
+        
+        <!-- SECTION 1: HERO -->
+        <section id="hero" class="section hero-section" data-scroll-section="0">
+            <div class="container">
+                <div id="hero-shape-canvas"></div>
+                <div class="hero-title-stack">
+                    
+                    <h1 class="hero-title">Martuza Ferdous</h1>
+                </div>
+                <p class="hero-subtitle">Creative Technologist</p>
+                <p class="hero-hook">Building interactive experiences that bridge logic and imagination</p>
+                <div class="scroll-indicator">
+                    <span>Continue</span>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M12 5V19M12 19L5 12M12 19L19 12" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                </div>
+            </div>
+        </section>
+        
+        <!-- SECTION 2: STORY - INTERACTIVE JOURNEY -->
+        <section id="story" class="section story-section" data-scroll-section="1">
+            <div class="container">
+                <h2 class="section-title-center">The Journey</h2>
+                
+                <div class="journey-container">
+                    <!-- p5.js canvas for connecting path -->
+                    <div id="journey-path-canvas"></div>
+                    
+                    <!-- Journey Node 1 -->
+                    <div class="journey-node" data-node="0">
+                        <div class="node-content node-left">
+                            <div class="node-text">
+                                <h3 class="node-title">Where I Started</h3>
+                                <p>My career began in the world of structure and systems—product management, consulting, entrepreneurship, and software development. I built applications, designed strategies, and solved complex business problems. Everything had a framework, a process, a clear objective.</p>
+                                <p>I was good at it. But something was missing.</p>
+                            </div>
+                        </div>
+                        <div class="node-marker">
+                            <div class="node-circle"></div>
+                        </div>
+                        <div class="node-content node-right"></div>
+                    </div>
+                    
+                    <!-- Journey Node 2 -->
+                    <div class="journey-node" data-node="1">
+                        <div class="node-content node-left"></div>
+                        <div class="node-marker">
+                            <div class="node-circle"></div>
+                        </div>
+                        <div class="node-content node-right">
+                            <div class="node-text">
+                                <h3 class="node-title">The Questions</h3>
+                                <p>The questions started small: <em>What if technology could tell stories? What if code could be expressive, not just functional? What if systems could surprise you?</em></p>
+                                <p>I found myself drawn to the edges—where logic met creativity, where data became visual, where interaction became experience. The clean lines of my career path started to blur.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Journey Node 3 -->
+                    <div class="journey-node" data-node="2">
+                        <div class="node-content node-left">
+                            <div class="node-text">
+                                <h3 class="node-title">The Transformation</h3>
+                                <p>I dove into digital media and creative coding. p5.js became my canvas. WebXR opened new dimensions. Interactive storytelling is merging everything I'd learned about structure with everything I'm discovering about expression.</p>
+                                <p>The shift wasn't abandoning my technical foundation—it was building on top of it. I'm merging everything I'd learned about structure with everything I'm discovering about expression.</p>
+                            </div>
+                        </div>
+                        <div class="node-marker">
+                            <div class="node-circle"></div>
+                        </div>
+                        <div class="node-content node-right"></div>
+                    </div>
+                    
+                    <!-- Journey Node 4 -->
+                    <div class="journey-node" data-node="3">
+                        <div class="node-content node-left"></div>
+                        <div class="node-marker">
+                            <div class="node-circle"></div>
+                        </div>
+                        <div class="node-content node-right">
+                            <div class="node-text">
+                                <h3 class="node-title">Where I Am Now</h3>
+                                <p>Today, I'm at the intersection of technology and creativity—bringing my technical foundation into new territory, designing with both logic and creative expression.</p>
+                                <p>I'm building interactive experiences and exploring what happens when technology becomes a tool for creative expression—not just functional solutions.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+        
+        <!-- SECTION 3: WORK -->
+        <section id="work" class="section work-section" data-scroll-section="2">
+            <div class="container">
+                <h2 class="section-title">Selected Work</h2>
+                <div class="work-grid">
+
+                    <!-- Project cards -->
+                    <article class="project-card" data-project-id="treasure-hunter" data-has-embed="true">
+                        <div class="project-number-badge">01</div>
+                        <div class="project-image">
+                            <img src="images/treasure.jpg" alt="Treasure Hunter game preview" class="project-img" loading="lazy">
+                            <div class="project-badge">View Interactive</div>
+                        </div>
+                        <div class="project-info">
+                            <h3 class="project-title">Treasure Hunter</h3>
+                            <p class="project-description">Interactive adventure game built with p5.js featuring collision detection and game mechanics</p>
+                            <div class="project-tags">
+                                <span class="tag">Game</span>
+                                <span class="tag">p5.js</span>
+                                <span class="tag">JS</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card" data-project-id="steamboat-restoration" data-has-embed="true">
+                        <div class="project-number-badge">02</div>
+                        <div class="project-image">
+                            <img src="images/restoration.jpg" alt="Steamboat Willi Restoration preview" class="project-img" loading="lazy">
+                            <div class="project-badge">View Interactive</div>
+                        </div>
+                        <div class="project-info">
+                            <h3 class="project-title">Steamboat Willi Restoration</h3>
+                            <p class="project-description">Digital restoration and animation of historic footage using creative coding techniques</p>
+                            <div class="project-tags">
+                                <span class="tag">Public Domain</span>
+                                <span class="tag">Inteactive</span>
+                                <span class="tag">p5</span>
+                                <span class="tag">Matter.js</span>
+                                <span class="tag">JS</span>
+
+
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card" data-project-id="solarpunk-3d" data-has-embed="true">
+                        <div class="project-number-badge">03</div>
+                        <div class="project-image">
+                            <img src="images/3d.jpg" alt="Solarpunk 3D Experience preview" class="project-img" loading="lazy">
+                            <div class="project-badge">View Interactive</div>
+                        </div>
+                        <div class="project-info">
+                            <h3 class="project-title">Solarpunk 3D Experience</h3>
+                            <p class="project-description">Immersive 3D environment combining p5.js and A-Frame for WebXR experiences</p>
+                            <div class="project-tags">
+                                <span class="tag">Interactive</span>
+                                <span class="tag">WebXR</span>
+                                <span class="tag">p5</span>
+                                <span class="tag">ThreeJs</span>
+                                <span class="tag">AFrame</span>
+                                <span class="tag">Game</span>
+                                <span class="tag">JS</span>
+
+
+
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card" data-project-id="probabilities" data-has-embed="true">
+                        <div class="project-number-badge">04</div>
+                        <div class="project-image">
+                            <img src="images/probability.png" alt="Probabilities preview" class="project-img" loading="lazy">
+                            <div class="project-badge">View Interactive</div>
+                        </div>
+                        <div class="project-info">
+                            <h3 class="project-title">Probabilities</h3>
+                            <p class="project-description">Visualizing mathematical logic through interactive design</p>
+                            <div class="project-tags">
+                                <span class="tag">Math Art</span>
+                                <span class="tag">Interactive</span>
+                                <span class="tag">p5</span>
+                                <span class="tag">JS</span>
+
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card" data-project-id="pizza-matrix" data-has-embed="true">
+                        <div class="project-number-badge">05</div>
+                        <div class="project-image">
+                            <img src="images/pizza.png" alt="Pizza Matrix preview" class="project-img" loading="lazy">
+                            <div class="project-badge">View Interactive</div>
+                        </div>
+                        <div class="project-info">
+                            <h3 class="project-title">Pizza Matrix</h3>
+                            <p class="project-description">Interactive matrix visualization with pizza-themed elements</p>
+                            <div class="project-tags">
+                                <span class="tag">Math Art</span>
+                                <span class="tag">Interactive</span>
+                                <span class="tag">p5</span>
+                                <span class="tag">JS</span>
+
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card" data-project-id="epluribus" data-has-embed="false">
+                        <div class="project-number-badge">06</div>
+                        <div class="project-image">
+                            <img src="images/agile.png" alt="Agile WorkStation preview" class="project-img" loading="lazy">
+                            <div class="project-badge coming-soon">Enterprise Solution</div>
+                        </div>
+                        <div class="project-info">
+                            <h3 class="project-title">Agile WorkStation</h3>
+                            <p class="project-description">Epluribus Technologies - A Financial Advisor Workflow System</p>
+                            <div class="project-tags">
+                                <span class="tag">FinTech</span>
+                                <span class="tag">Financial Analytics</span>
+                                <span class="tag">Java</span>
+                                <span class="tag">Oracle</span>
+                                <span class="tag">C++</span>
+                                <span class="tag">C#</span>
+                                <span class="tag">JS</span>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+        
+        <!-- SECTION 4: CONTACT -->
+        <section id="contact" class="section contact-section" data-scroll-section="3">
+            <div class="container">
+                <h2 class="section-title">Let's Connect</h2>
+                <div class="contact-content">
+                    <p class="contact-statement">I'm available for creative projects, collaborations, and conversations about the intersection of technology and design.</p>
+
+                    <form class="contact-form">
+                        <div class="form-group">
+                            <label for="contact-email">Your Email</label>
+                            <input
+                                type="email"
+                                id="contact-email"
+                                name="email"
+                                placeholder="name@example.com"
+                                required
+                            />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contact-message">Message</label>
+                            <textarea
+                                id="contact-message"
+                                name="message"
+                                rows="5"
+                                placeholder="Tell me about your project or idea..."
+                                required
+                            ></textarea>
+                        </div>
+
+                        <button type="submit" class="contact-submit">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+        <!-- Footer -->
+    <footer class="footer">
+        <canvas id="footer-canvas"></canvas>
+        <div class="footer-content">
+            <div class="container">
+                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                    <p class="footer-text">© 2025 Martuza Ferdous. All rights reserved.</p>
+                    <nav style="display: flex; gap: 2rem;">
+                        <a href="projects.html" style="color: var(--color-text-secondary); text-decoration: none; font-family: var(--font-mono); font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; transition: color 0.3s ease;">Course Projects</a>
+                        <a href="https://github.com/martidous/prof.git" target="_blank" style="color: var(--color-text-secondary); text-decoration: none; font-family: var(--font-mono); font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; transition: color 0.3s ease;">Site GitHub</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Project Modal -->
+    <div id="project-modal" class="modal" data-state="closed" aria-hidden="true" role="dialog" aria-labelledby="modal-title">
+        <div class="modal-backdrop"></div>
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close modal">&times;</button>
+            <div class="modal-header">
+                <h2 id="modal-title" class="modal-title"></h2>
+            </div>
+            <div class="modal-body">
+                <div class="modal-loading">
+                    <div class="loading-spinner"></div>
+                    <span>Loading sketch...</span>
+                </div>
+                <div class="modal-embed"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/project-data.js"></script>
+    <script src="js/modal-manager.js"></script>
+    <script src="js/color-transitions.js"></script>
+    <script src="js/hero-shape.js"></script>
+    <!--<script src="js/hero-title-3d.js"></script>-->
+    <script src="js/journey-path.js"></script>
+    <script src="js/path-sketch.js"></script>
+    <script src="js/footer-animation.js"></script>
+    <script src="js/scroll-controller.js"></script>
+    <script src="js/ui.js"></script>
+   
+
+</body>
+</html>
