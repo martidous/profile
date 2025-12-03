@@ -796,6 +796,13 @@ main {
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
 }
 
+/* Larger modal for 3D game project */
+.modal[data-project-id="solarpunk-3d"] .modal-content {
+    width: 95vw;
+    max-width: 1600px;
+    height: 92vh;
+}
+
 .modal[data-state="open"] .modal-content {
     transform: scale(1);
 }

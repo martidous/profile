@@ -89,6 +89,9 @@ class ModalManager {
             this.modalTitle.textContent = projectData.title;
         }
 
+        // Add project-specific data attribute for custom styling
+        this.modal.setAttribute('data-project-id', projectData.id);
+
         // Show modal with loading state
         this.modal.setAttribute('data-state', 'open');
         this.modal.setAttribute('aria-hidden', 'false');
@@ -242,6 +245,9 @@ class ModalManager {
         // Hide modal
         this.modal.setAttribute('data-state', 'closed');
         this.modal.setAttribute('aria-hidden', 'true');
+
+        // Remove project-specific data attribute
+        this.modal.removeAttribute('data-project-id');
 
         // Restore body scroll
         document.body.style.overflow = '';
