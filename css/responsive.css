@@ -90,6 +90,15 @@
         gap: var(--space-md);
     }
 
+    .experiments-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-md);
+    }
+
+    .experiment-card {
+        border-width: 1px;
+    }
+
     .contact-links {
         flex-direction: column;
         align-items: center;
@@ -143,7 +152,19 @@
     .project-description {
         font-size: 13px;
     }
-    
+
+    .experiment-title {
+        font-size: 20px;
+    }
+
+    .experiment-description {
+        font-size: 13px;
+    }
+
+    .section-subtitle {
+        font-size: 14px;
+    }
+
     .contact-statement {
         font-size: 16px;
     }

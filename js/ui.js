@@ -25,9 +25,12 @@ function initProjectCards() {
         return;
     }
 
+    // Handle both project cards and experiment cards
     const projectCards = document.querySelectorAll('.project-card');
+    const experimentCards = document.querySelectorAll('.experiment-card');
+    const allCards = [...projectCards, ...experimentCards];
 
-    projectCards.forEach(card => {
+    allCards.forEach(card => {
         const hasEmbed = card.getAttribute('data-has-embed') === 'true';
         const projectId = card.getAttribute('data-project-id');
 
@@ -58,9 +61,12 @@ function initScrollReveal() {
         });
     }, observerOptions);
     
-    // Observe project cards
+    // Observe project cards and experiment cards
     const projectCards = document.querySelectorAll('.project-card');
-    projectCards.forEach((card, index) => {
+    const experimentCards = document.querySelectorAll('.experiment-card');
+    const allCards = [...projectCards, ...experimentCards];
+
+    allCards.forEach((card, index) => {
         card.style.opacity = '0';
         card.style.transform = 'translateY(30px)';
         card.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
@@ -71,7 +77,7 @@ function initScrollReveal() {
 // Keyboard navigation
 function initKeyboardNav() {
     document.addEventListener('keydown', (e) => {
-        const sections = ['hero', 'story', 'work', 'contact'];
+        const sections = ['hero', 'story', 'work', 'experiments', 'contact'];
         const currentSection = document.querySelector('.nav-dot.active')?.getAttribute('data-section');
         const currentIndex = sections.indexOf(currentSection);
         

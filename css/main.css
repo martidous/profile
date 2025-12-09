@@ -585,6 +585,140 @@ main {
 }
 
 /* ===================================
+   EXPERIMENTS SECTION
+   =================================== */
+
+.experiments-section {
+    min-height: 100vh;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 168, 255, 0.05) 100%);
+}
+
+.section-subtitle {
+    font-size: clamp(16px, 2vw, 18px);
+    color: var(--color-text-secondary);
+    text-align: center;
+    margin-top: var(--space-sm);
+    margin-bottom: var(--space-xl);
+    font-family: var(--font-mono);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.experiments-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: var(--space-lg);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.experiment-card {
+    position: relative;
+    background-color: var(--color-surface);
+    border: 2px solid rgba(0, 255, 200, 0.2);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    cursor: pointer;
+    box-shadow: 0 10px 40px rgba(0, 255, 200, 0.1);
+}
+
+.experiment-card:hover {
+    transform: translateY(-12px) scale(1.02);
+    border-color: var(--color-accent-flow-cyan);
+    box-shadow: 0 20px 60px rgba(0, 255, 200, 0.3);
+}
+
+.experiment-visual {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background-color: rgba(0, 0, 0, 0.8);
+    overflow: hidden;
+    position: relative;
+}
+
+.experiment-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.4s ease, filter 0.4s ease;
+    filter: brightness(0.9);
+}
+
+.experiment-card:hover .experiment-img {
+    transform: scale(1.08);
+    filter: brightness(1.1);
+}
+
+.experiment-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.7) 100%);
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding: var(--space-md);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.experiment-card:hover .experiment-overlay {
+    opacity: 1;
+}
+
+.experiment-badge {
+    font-family: var(--font-mono);
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    padding: 12px 24px;
+    background: linear-gradient(135deg, var(--color-accent-flow-cyan) 0%, var(--color-accent-flow-magenta) 100%);
+    color: var(--color-bg);
+    border-radius: 6px;
+    font-weight: 700;
+    box-shadow: 0 4px 16px rgba(0, 255, 200, 0.4);
+}
+
+.experiment-info {
+    padding: var(--space-lg);
+    background: linear-gradient(180deg, var(--color-surface) 0%, rgba(0, 168, 255, 0.05) 100%);
+}
+
+.experiment-title {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: var(--space-sm);
+    background: linear-gradient(135deg, var(--color-accent-flow-cyan) 0%, var(--color-accent-flow-magenta) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.experiment-description {
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-md);
+}
+
+.experiment-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-xs);
+}
+
+.experiment-card .tag {
+    background-color: rgba(0, 255, 200, 0.1);
+    border-color: rgba(0, 255, 200, 0.3);
+    color: var(--color-accent-flow-cyan);
+    font-weight: 500;
+}
+
+/* ===================================
    CONTACT SECTION
    =================================== */
 
@@ -796,8 +930,9 @@ main {
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
 }
 
-/* Larger modal for 3D game project */
-.modal[data-project-id="solarpunk-3d"] .modal-content {
+/* Larger modal for 3D projects */
+.modal[data-project-id="solarpunk-3d"] .modal-content,
+.modal[data-project-id="game-emotion-viz"] .modal-content {
     width: 95vw;
     max-width: 1600px;
     height: 92vh;

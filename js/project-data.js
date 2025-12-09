@@ -56,5 +56,14 @@ const projectsData = [
         hasEmbed: false,
         embedUrl: null,
         embedType: null
+    },
+    {
+        id: 'game-emotion-viz',
+        title: 'Game Emotion Clusters',
+        description: 'Interactive 3D data visualization showing games clustered by emotional experience, not mechanical genre',
+        tags: ['Data Viz', '3D', 'Three.js'],
+        hasEmbed: true,
+        embedUrl: 'https://martuzaferdous.com/ucf/GameEmo/',
+        embedType: 'custom'
     }
 ];
